@@ -34,8 +34,17 @@ Or install it yourself as:
     
     file_value == memory_value => false
     
+## Rails 4.0.0
 
+I will be using this for new Rails applications.  Open up config/initializers/secret_token.rb, and replace this:
 
+    MyApp::Application.config.secret_key_base = ' ... '
+
+With this:
+
+    MyApp::Application.config.secret_key_base = MakeSecret::Value.for( :key_base, '.make_secret' )
+
+Then add /.make_secret to the ignore file
 
 ## Contributing
 
