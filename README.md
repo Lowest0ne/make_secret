@@ -21,6 +21,9 @@ Or install it yourself as:
 
 ## Usage
 
+    # Require the gem
+    require 'make_secret'
+
     # To Store data in memory
     memory_value = MakeSecret::Value.for( :key )  => result of SecureRandom.hex(64)
     memory_value == MakeSecret::Value.for( :key ) => true
@@ -28,6 +31,7 @@ Or install it yourself as:
     # To Store data in a file
     file_value = MakeSecret::Value.for( :key, 'my_file' ) => result of SecureRandom.hex(64)
     file_value = MakeSecret::Value.for( :key, 'my_file' ) => true
+    
     file_value == memory_value => false
     
 
